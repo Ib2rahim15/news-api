@@ -1,0 +1,152 @@
+.Search_Bar{
+    grid-area: 2 / 4 / 4 / 10;
+}
+@media screen and (max-width: 768px) {
+    .Search_Bar{
+        grid-area: 1 / 1 / 4 / 13;
+    }
+    .SuperSearchCon{
+        width: 410px !important;
+        height: 100%;
+        border-radius: 0;
+        background-color: var(--third-color)!important;
+    }
+}
+.SuperSearchCon{
+    width: 400px ;
+    height: 80px;
+    margin: 1rem auto 0;
+    background-color: var(--main-color);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;    
+}
+
+.containerSearch {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100px;
+}
+.containerSearch .search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--second-color);
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    animation: search 1s infinite alternate ease-in-out;
+}
+@keyframes search {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+    
+
+.containerSearch .search:hover {
+    cursor: pointer;
+}
+.containerSearch .search::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+.containerSearch .search::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.5s;
+}
+.containerSearch input {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: var(--second-color);
+    color: white;
+    text-shadow: 0 0 10px var(--second-color);
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 var(--second-color), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+.containerSearch input:hover {
+    cursor: pointer;
+}
+.containerSearch input:focus {
+    width: 300px;
+    opacity: 1;
+    cursor: text;
+}
+.containerSearch input:focus ~ .search {
+    right: -250px;
+    background: #151515;
+    z-index: 6;
+}
+.containerSearch input:focus ~ .search::before {
+    top: 0;
+    left: 0;
+    width: 25px;
+}
+.containerSearch input:focus ~ .search::after {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background: white;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+}
+.containerSearch input::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: bolder;
+}

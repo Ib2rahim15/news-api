@@ -1,0 +1,43 @@
+.MainNews {
+  grid-area: 3 / 3 / 11 / 11;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 3rem;
+  background: var(--third-color);
+  border-radius: 1em;
+  position: relative;
+}
+
+.Active {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: auto;
+  z-index: 1000;
+}
+.ActiveTrue {
+  background: #cb2d3e;
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+}
+.ActiveFalse {
+  background: #2ed573;
+  background: linear-gradient(to bottom, #59e0c5, #2ed573);
+}
+@media screen and (max-width: 768px) {
+  .MainNews {
+    grid-area: 2 / 1 / 12 / 13;
+    margin: 2rem;
+    grid-gap: 2rem;
+    width: 95%;
+    
+    padding: 1rem;
+    margin: 0 auto;
+  }
+}

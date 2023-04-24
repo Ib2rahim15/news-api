@@ -1,0 +1,23 @@
+.Logo{
+    grid-area: 2 / 3 / 3/ 4; 
+    color: var(--third-color);
+    font-size: 2.5rem;
+    font-weight: 800;
+    z-index: 10;
+    position: relative;
+}
+@media screen and (max-width: 768px) {
+    .Logo{
+        display: none;
+    }
+
+}
+.LogoApi{
+    letter-spacing: 28px;
+    width: 60%;
+    margin-top: -2rem;
+    margin-left: -0.4rem;
+    height: 40%;
+    background-color: var(--first-color);
+    color: var(--second-color);
+}
